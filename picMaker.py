@@ -1,12 +1,12 @@
 class pixel:
     def __init__(self, r = 0, g = 0, b = 0):
-        self.red = r 
+        self.red = r
         self.green = g
         self.blue = b
     def setColor(self, r = -1, g = -1, b = -1):
-    	self.red = self.red if r = -1 else r
-    	self.green = self.green if g = -1 else g
-    	self.blue = self.blue if b = -1 else b
+    	self.red = self.red if r == -1 else r
+    	self.green = self.green if g == -1 else g
+    	self.blue = self.blue if b == -1 else b
     def getColor(self):
         return "{} {} {}".format(self.red, self.green, self.blue)
 class image:
@@ -41,7 +41,7 @@ class image:
                 funct(w,h,self.pixels[w][h])
     def plot(self,w, h, r = 0, g = 0, b = 0):
         self.pixels[h][w].setColor(r,g,b)
-    
+
 nothing = image(500,500)
 from random import randint
 def rando(pixel):
@@ -64,4 +64,3 @@ def man(w,h,pixel):
     pixel.red = 255 - int(m * 255 / 80)
 nothing.allPixCoord(man)
 nothing.toFile("image")
-
